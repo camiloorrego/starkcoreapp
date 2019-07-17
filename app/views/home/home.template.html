@@ -5,6 +5,10 @@
 
   <div class="container-list">
 
+    <md-button class="md-fab md-primary btn-add"aria-label="add" ng-click="add()">
+      <md-icon>add</md-icon>
+    </md-button>
+
     <div class="container-search">
       <md-input-container class="md-icon-float md-block field-search">
         <label>Search</label>
@@ -13,7 +17,8 @@
       </md-input-container>
     </div>
 
-    <div class="container-delivery">
+    
+    <div class="container-delivery" ng-repeat="item in items">
       <div style="width: 10%" layout="row" layout-align="center center">
         <md-icon class="check-list">check_circle</md-icon>
       </div>
@@ -58,7 +63,6 @@
               </md-menu-item>
             </md-menu-content>
           </md-menu>
-
         </div>
       </div>
     </div>

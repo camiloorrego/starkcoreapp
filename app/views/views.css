@@ -109,3 +109,12 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.btn-add {
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
+  background-color: #EE8D38 !important
+}
+

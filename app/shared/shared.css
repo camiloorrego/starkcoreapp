@@ -9,7 +9,7 @@
 }
 
 .container-filter {
-  width: 80%;
+  width: 90%;
   color: rgba(0, 0, 0, 0.54);
 }
 
@@ -22,7 +22,7 @@
 }
 
 .switch-filter md-switch {
-  transform: scale(2.3);
+  transform: scale(2);
 }
 
 .switch-filter md-icon {
