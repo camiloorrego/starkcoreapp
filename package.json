@@ -1,0 +1,25 @@
+{
+  "name": "starkcoreapp",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "http-server ./app -p 8000",
+    "postinstall": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*}/**/*\" app/lib -C"
+  },
+  "author": "Camilo Orrego",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "cpx": "^1.5.0"
+  },
+  "dependencies": {
+    "angular": "^1.7.8",
+    "angular-animate": "^1.7.8",
+    "angular-aria": "^1.7.8",
+    "angular-material": "^1.1.19",
+    "angular-messages": "^1.7.8",
+    "angular-resource": "^1.7.8",
+    "angular-route": "^1.7.8"
+  }
+}

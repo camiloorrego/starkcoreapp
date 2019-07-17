@@ -1,0 +1,76 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #EEEEEE;
+}
+
+.container-main {
+  background-color: #E6E6E6;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.header {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100px;
+}
+
+.logo {
+  height: 100%;
+}
+
+.container-tabs {
+  margin: 0 25px;
+  width: 75%;
+  
+}
+
+.tabs {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.tab md-icon {
+  color: #193948;
+}
+
+.lbl-tab {
+  font-size: 11px;
+  color: #193948;
+}
+
+.tab-active {
+  background-color: #193948;
+}
+
+.tab-active md-icon {
+  color: #ffffff !important;
+}
+
+.tab-active .lbl-tab {
+  color: #ffffff !important;
+}

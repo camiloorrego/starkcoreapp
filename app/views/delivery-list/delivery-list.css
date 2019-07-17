@@ -1,0 +1,14 @@
+.container-delivery {
+  display: flex;
+  flex-direction: row;
+}
+
+.filters {
+  width: 20%;
+  background-color: green
+}
+
+.container-list {
+  width: 80%;
+  background-color: red
+}
