@@ -2,8 +2,8 @@
 
 angular.
   module('viewsModule').
-  component('deliveryList', {
-    templateUrl: '/views/delivery-list/delivery-list.template.html',
+  component('messagesPage', {
+    templateUrl: '/views/messages/messages.template.html',
     controller:
       ($scope) => {
         $scope.$on("SendDown", function () {

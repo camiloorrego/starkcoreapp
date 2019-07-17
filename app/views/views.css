@@ -1,13 +1,13 @@
-.container-delivery {
+.delivery-list {
   display: flex;
   flex-direction: row;
 }
 
-.filters {
-  width: 20%;
+.delivery-list .filters {
+  width: 25%;
 }
 
-.container-list {
-  width: 80%;
+.delivery-list .container-list {
+  width: 75%;
   background-color: red
 }

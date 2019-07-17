@@ -6,14 +6,29 @@ angular.
     function config($routeProvider, $mdIconProvider, $mdThemingProvider) {
 
       $routeProvider.
-        when('/deliveries', {
-          template: '<delivery-list></delivery-list>'
+        when('/home', {
+          template: '<home-page></home-page>'
+        }).
+        when('/messages', {
+          template: '<messages-page></messages-page>'
+        }).
+        when('/wishlist', {
+          template: '<wishlist-page></wishlist-page>'
+        }).
+        when('/settings', {
+          template: '<settings-page></settings-page>'
+        }).
+        when('/account', {
+          template: '<account-page></account-page>'
         }).
         otherwise({
-          redirectTo: '/deliveries'
+          redirectTo: '/home'
         });
 
-      $mdIconProvider.icon('lightbulb', 'img/light-bulb.svg', 24);
+      $mdIconProvider.icon('lightbulb', 'img/light-bulb.svg', 24)
+      .icon('sale', 'img/sale.svg', 24)
+      .icon('calendar', 'img/calendar.svg', 24)
+      .icon('heart', 'img/heart.svg', 24);
 
       var customPrimary = {
         '50': '#3a84a7',

@@ -10,9 +10,10 @@ html {
   background-color: #E6E6E6;
   margin: 10px;
   border-radius: 10px;
+  padding: 40px;
 }
 
-.header {
+.header-main {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -31,7 +32,6 @@ html {
 }
 
 .container-tabs {
-  margin: 0 25px;
   width: 75%;
   
 }
@@ -52,6 +52,7 @@ html {
   width: 20%;
   height: 100%;
   cursor: pointer;
+  text-decoration:none
 }
 
 .tab md-icon {

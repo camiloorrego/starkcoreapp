@@ -26,7 +26,11 @@
 <script src="lib/angular-material/angular-material.js"></script>
 
 <script src="views/views.module.js"></script>
-<script src="views/delivery-list/delivery-list.component.js"></script>
+<script src="views/home/home.component.js"></script>
+<script src="views/account/account.component.js"></script>
+<script src="views/messages/messages.component.js"></script>
+<script src="views/wishlist/wishlist.component.js"></script>
+<script src="views/settings/settings.component.js"></script>
 
 <script src="shared/shared.module.js"></script>
 <script src="shared/filter-list/filter-list.component.js"></script>
@@ -36,42 +40,42 @@
   <div class="container-main">
 
 
-    <div layout="row" class="header">
+    <div layout="row" class="header-main">
       <div class="container-logo">
         <img src="img/logo.png" class="logo">
       </div>
       <div class="container-tabs">
         <div class="tabs">
-          <div class="tab" ng-class="{'tab-active': selectedIndex==0}" ng-click="change(0)">
+          <a class="tab" ng-href='#!/home' ng-click="change(0)" ng-class="isActive(0)">
             <div>
               <md-icon>home</md-icon>
             </div>
             <div class="lbl-tab">Home</div>
-          </div>
-          <div class="tab" ng-class="{'tab-active': selectedIndex==1}" ng-click="change(1)">
+          </a>
+          <a class="tab" ng-href='#!/messages' ng-click="change(1)" ng-class="isActive(1)">
             <div>
               <md-icon>mail_outline</md-icon>
             </div>
             <div class="lbl-tab">Messages</div>
-          </div>
-          <div class="tab" ng-class="{'tab-active': selectedIndex==2}" ng-click="change(2)">
+          </a>
+          <a class="tab" ng-href='#!/wishlist' ng-click="change(2)" ng-class="isActive(2)">
             <div>
               <md-icon>star</md-icon>
             </div>
             <div class="lbl-tab">Wishlist</div>
-          </div>
-          <div class="tab" ng-class="{'tab-active': selectedIndex==3}" ng-click="change(3)">
+          </a>
+          <a class="tab" ng-href='#!/settings' ng-click="change(3)" ng-class="isActive(3)">
             <div>
               <md-icon>settings</md-icon>
             </div>
             <div class="lbl-tab">Settings</div>
-          </div>
-          <div class="tab" ng-class="{'tab-active': selectedIndex==4}" ng-click="change(4)">
+          </a>
+          <a class="tab" ng-href='#!/account' ng-click="change(4)" ng-class="isActive(4)">
             <div>
               <md-icon>person</md-icon>
             </div>
             <div class="lbl-tab">My account</div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -79,6 +83,6 @@
 
     <div ng-view></div>
   </div>
-  </body>
+</body>
 
 </html>
