@@ -2,8 +2,8 @@
 
 angular.
   module('starkCoreApp').
-  config(['$routeProvider',
-    function config($routeProvider) {
+  config(['$routeProvider', '$mdIconProvider', '$mdThemingProvider',
+    function config($routeProvider, $mdIconProvider, $mdThemingProvider) {
 
       $routeProvider.
         when('/deliveries', {
@@ -12,5 +12,52 @@ angular.
         otherwise({
           redirectTo: '/deliveries'
         });
+
+      $mdIconProvider.icon('lightbulb', 'img/light-bulb.svg', 24);
+
+      var customPrimary = {
+        '50': '#3a84a7',
+        '100': '#337594',
+        '200': '#2d6681',
+        '300': '#26576e',
+        '400': '#20485b',
+        '500': '#193948',
+        '600': '#122a35',
+        '700': '#0c1b22',
+        '800': '#050c0f',
+        '900': '#000000',
+        'A100': '#4093ba',
+        'A200': '#519ec3',
+        'A400': '#64a9c9',
+        'A700': '#000000'
+    };
+    $mdThemingProvider
+        .definePalette('customPrimary', 
+                        customPrimary);
+
+    var customAccent = {
+        '50': '#171e43',
+        '100': '#1e2756',
+        '200': '#252f69',
+        '300': '#2b387c',
+        '400': '#32408f',
+        '500': '#3849a2',
+        '600': '#4d5ec1',
+        '700': '#606fc7',
+        '800': '#7280ce',
+        '900': '#8591d5',
+        'A100': '#4d5ec1',
+        'A200': '#3f51b5',
+        'A400': '#3849a2',
+        'A700': '#98a2db'
+    };
+    $mdThemingProvider
+        .definePalette('customAccent', 
+                        customAccent);
+
+      $mdThemingProvider.theme('default')
+        .primaryPalette('customPrimary')
+        .accentPalette('customAccent')
+
     }
   ]);

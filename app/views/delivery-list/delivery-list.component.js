@@ -1,12 +1,14 @@
 'use strict';
 
 angular.
-  module('views').
+  module('viewsModule').
   component('deliveryList', {
     templateUrl: '/views/delivery-list/delivery-list.template.html',
     controller:
-      () => {
-        //alert(1)
+      ($scope) => {
+        $scope.$on("SendDown", function () {
+          console.log(1)
+        });
       }
 
   });

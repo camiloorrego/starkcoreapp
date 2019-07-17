@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('views', []);
+angular.module('viewsModule', ['sharedModule']);

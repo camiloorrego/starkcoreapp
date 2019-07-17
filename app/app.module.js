@@ -5,5 +5,6 @@ angular.module('starkCoreApp', [
   'ngMaterial', 'ngMessages',
   'ngAnimate',
   'ngRoute',
-  'views'
+  'viewsModule',
+  'sharedModule'
 ]);
