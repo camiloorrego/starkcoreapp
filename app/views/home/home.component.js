@@ -6,8 +6,8 @@ angular.
     templateUrl: '/views/home/home.template.html',
     controller:
       ($scope) => {
-        $scope.$on("SendDown", function () {
-          console.log(1)
+        $scope.$on("update-filters", function (e, args) {
+          console.log(args)
         });
       }
 

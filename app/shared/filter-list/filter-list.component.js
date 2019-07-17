@@ -6,10 +6,23 @@ angular.
     templateUrl: '/shared/filter-list/filter-list.template.html',
     controller:
       ($scope) => {
-        $scope.emit = () => {
-          $scope.$emit("SendDown", "some data");
+
+        $scope.filters = {
+          sale: false,
+          date: false,
+          like: false,
+          status: '',
         }
-        //alert(1)
+
+        $scope.$watch('filters', function (newVal, oldVal) {
+          $scope.$emit("update-filters", $scope.filters);
+        }, true);
+
+
+        $scope.statusChange = () => {
+          console.log(1);
+
+        }
       }
 
   });

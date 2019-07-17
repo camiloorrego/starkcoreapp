@@ -1,7 +1,66 @@
-<div class="delivery-list">
+<div class="home">
   <div class="filters">
-
     <filter-list></filter-list>
   </div>
-  <div class="container-list">b</div>
+
+  <div class="container-list">
+
+    <div class="container-search">
+      <md-input-container class="md-icon-float md-block field-search">
+        <label>Search</label>
+        <md-icon>search</md-icon>
+        <input ng-model="user.name" type="text">
+      </md-input-container>
+    </div>
+
+    <div class="container-delivery">
+      <div style="width: 10%" layout="row" layout-align="center center">
+        <md-icon class="check-list">check_circle</md-icon>
+      </div>
+      <div layout="row" layout-align="start center" class="detail-delivery">
+        <div class="detail-column column-1" layout="column">
+          <div>a</div>
+          <div>b</div>
+          <div>c</div>
+        </div>
+        <md-divider class="vertical-divider partial"></md-divider>
+        <div class="detail-column column-2" layout="row">
+          <div flex="33" layout="row" layout-align="center center">
+            <md-icon>near_me</md-icon>
+          </div>
+          <div flex="66" layout="column" layout-align="center center">
+            <div>a</div>
+            <div>
+              <md-icon class="arrow_down">keyboard_arrow_down</md-icon>
+            </div>
+            <div>c</div>
+          </div>
+        </div>
+        <md-divider class="vertical-divider partial"></md-divider>
+        <div layout="row" class="detail-column column-3">
+          <md-icon class="vehicle">local_shipping</md-icon>
+        </div>
+        <div layout="row" class="detail-column column-4">
+          $ 250.000
+        </div>
+        <div layout="row" class="detail-column column-5">
+          <div class="box">1</div>
+        </div>
+        <div layout="row" class="detail-column column-6">
+          <md-menu>
+            <md-button aria-label="Open menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+              <md-icon md-menu-origin>more_vert</md-icon>
+            </md-button>
+            <md-menu-content>
+              <md-menu-item>
+                <md-button ng-click="deleteItem($index)">Delete
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

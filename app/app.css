@@ -10,7 +10,8 @@ html {
   background-color: #E6E6E6;
   margin: 10px;
   border-radius: 10px;
-  padding: 40px;
+  padding: 20px 40px;
+  height: calc(100vh - 65px);
 }
 
 .header-main {
@@ -23,7 +24,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 15%;
   height: 100px;
 }
 
@@ -32,13 +33,13 @@ html {
 }
 
 .container-tabs {
-  width: 75%;
+  width: 85%;
   
 }
 
 .tabs {
   width: 100%;
-  height: 60px;
+  height: 70px;
   display: flex;
   align-items: center;
   background-color: #ffffff;
@@ -74,4 +75,16 @@ html {
 
 .tab-active .lbl-tab {
   color: #ffffff !important;
+}
+
+.vertical-divider {
+  border-top-width: 0;
+  border-right-width: 1px;
+  border-right-style: solid;
+  height: 100%;
+  color: #CFCDCB;
+}
+
+.vertical-divider.partial{
+  height: 80% !important;
 }

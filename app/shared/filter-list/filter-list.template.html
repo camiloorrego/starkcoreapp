@@ -1,32 +1,52 @@
-<div class="filter-list">
-  <div class="header">
-    <div>
-      <md-icon md-svg-icon="lightbulb"></md-icon>
-    </div>
-    <div>Smart Filters</div>
-  </div>
-  <md-divider></md-divider>
+<div class="filter-list" layout="row">
+  <div class="filter-main">
+    <div class="container-filter">
+      <div class="header">
+        <div>
+          <md-icon md-svg-icon="lightbulb"></md-icon>
+        </div>
+        <div>Smart Filters</div>
+      </div>
+      <md-divider></md-divider>
 
-  <div class="swith-filter">
-  <div layout="row" layout-align="space-around center">
-    <div>
-      <md-icon style="font-size: 48px; height: 48px; width: 48px;" md-svg-icon="sale"></md-icon>
-    </div>
-    <md-switch style=" transform: scale(2);" class="md-primary" ng-model="data.cb1" aria-label="Switch 1"> </md-switch>
-  </div>
+      <div class="switch-filter">
+        <div>
+          <md-icon ng-class="{'icon-active': filters.sale}" md-svg-icon="sale"></md-icon>
+        </div>
+        <md-switch class="md-primary" ng-model="filters.sale" aria-label="Switch 1">
+        </md-switch>
+      </div>
 
-  <div layout="row" layout-align="space-around center">
-    <div>
-      <md-icon style="font-size: 48px; height: 48px; width: 48px;" md-svg-icon="calendar"></md-icon>
-    </div>
-    <md-switch style=" transform: scale(2);" class="md-primary" ng-model="data.cb1" aria-label="Switch 1"> </md-switch>
-  </div>
+      <div class="switch-filter">
+        <div>
+          <md-icon ng-class="{'icon-active': filters.date}" md-svg-icon="calendar"></md-icon>
+        </div>
+        <md-switch class="md-primary" ng-model="filters.date" aria-label="Switch 1">
+        </md-switch>
+      </div>
 
-  <div layout="row" layout-align="space-around center">
-    <div>
-      <md-icon style="font-size: 48px; height: 48px; width: 48px;" md-svg-icon="heart"></md-icon>
+      <div class="switch-filter">
+        <div>
+          <md-icon ng-class="{'icon-active': filters.like}" md-svg-icon="heart"></md-icon>
+        </div>
+        <md-switch class="md-primary" ng-model="filters.like" aria-label="Switch 1">
+        </md-switch>
+      </div>
+
+      <md-divider></md-divider>
+
+      <div class="header">
+        <div>Status</div>
+      </div>
+      <md-select ng-model="filters.status" ng-change="statusChange()" aria-label="statuz">
+        <md-option value="">Select a status</md-option>
+        <md-option value="0">No delivered</md-option>
+        <md-option value="1">Delivered</md-option>
+
+      </md-select>
     </div>
-    <md-switch style=" transform: scale(2);" class="md-primary" ng-model="data.cb1" aria-label="Switch 1"> </md-switch>
   </div>
-</div>
+  <div class="filter-divider">
+    <md-divider class="vertical-divider"></md-divider>
+  </div>
 </div>
