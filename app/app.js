@@ -3,7 +3,10 @@
 // Define the `phonecatApp` module
 angular.module('starkCoreApp')
   .controller('mainCtrl',
-    ($scope) => {
+    ($scope, $window) => {
+
+      const login = { user: 'camilo.orrego', name: 'Camilo Orrego', email: 'camilo.orrego@gmail.com' };
+      $window.sessionStorage.setItem('login', JSON.stringify(login))
 
       $scope.selectedIndex = 0;
 
