@@ -9,9 +9,9 @@ angular.
 
 
         $scope.deleteItem = (index) => {
-          const temp = JSON.parse($window.sessionStorage.getItem($scope.login.user));
+          const temp = JSON.parse($window.sessionStorage.getItem($scope.login.user + '_items'));
           temp.splice(index, 1);
-          $window.sessionStorage.setItem($scope.login.user, JSON.stringify(temp))
+          $window.sessionStorage.setItem($scope.login.user + '_items', JSON.stringify(temp))
           load();
         }
 
@@ -46,7 +46,7 @@ angular.
 
 
         function load() {
-          $scope.TempItems = JSON.parse($window.sessionStorage.getItem($scope.login.user)) || [];
+          $scope.TempItems = JSON.parse($window.sessionStorage.getItem($scope.login.user + '_items')) || [];
 
           // Se hace formato de la fecha
           $scope.TempItems.forEach((value, index, array) => {
@@ -130,10 +130,10 @@ angular.
 
           $scope.save = function () {
 
-            const items = JSON.parse($window.sessionStorage.getItem($scope.login.user)) || [];
+            const items = JSON.parse($window.sessionStorage.getItem($scope.login.user + '_items')) || [];
             $scope.data.status = (Math.floor(Math.random() * 2) + 1) === 1;
             items.push($scope.data)
-            $window.sessionStorage.setItem($scope.login.user, JSON.stringify(items))
+            $window.sessionStorage.setItem($scope.login.user + '_items', JSON.stringify(items))
             $mdDialog.hide();
           };
 

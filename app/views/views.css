@@ -158,3 +158,31 @@
   margin: 0 auto;
   width: 70%;
 }
+
+
+/* TEMPLATE MESSAGES */
+
+.messages {
+  margin: 0 auto;
+  width: 70%;
+}
+
+/* TEMPLATE WISHLIST */
+
+.wishlist {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.wishlist md-list-item .md-avatar,
+.wishlist md-list-item .md-list-item-inner .md-avatar {
+  width: 60px;
+  height: 60px;
+}
+
+/* TEMPLATE SETTINGS */
+
+.settings {
+  margin: 0 auto;
+  width: 70%;
+}

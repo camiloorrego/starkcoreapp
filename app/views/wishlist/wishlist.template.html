@@ -1,7 +1,15 @@
-<div class="delivery-list">
-  <div class="filters">
-
-    <filter-list></filter-list>
-  </div>
-  <div class="container-list">b</div>
+<div class="wishlist">
+  <md-list flex>
+    <div class="md-toolbar-tools">
+      <span>MY WISH LIST</span>
+    </div>
+    <md-list-item class="md-3-line" ng-repeat="item in todos">
+      <img ng-src="{{item.face}}" class="md-avatar" alt="{{item.who}}" />
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ item.who }}</h3>
+        <h4>{{ item.what }}</h4>
+        <p>{{ item.notes }}</p>
+      </div>
+    </md-list-item>
+  </md-list>
 </div>
