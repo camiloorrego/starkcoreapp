@@ -1,0 +1,84 @@
+<md-dialog class="dialog-add" aria-label="List dialog">
+  <form name="projectForm">
+
+
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>New register</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+      <div class="md-dialog-content">
+
+
+        <div layout="row">
+          <md-input-container flex="50">
+            <label>Origin</label>
+            <md-select name="origin" ng-model="data.origin" required>
+              <md-option ng-repeat="origin in origins" value="{{origin.name}}">
+                {{origin.name}}
+              </md-option>
+            </md-select>
+            <div ng-messages="projectForm.origin.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex="50">
+              <label>Destination</label>
+              <md-select name="destination" ng-model="data.destination" required>
+                <md-option ng-repeat="destination in destinations" value="{{destination.name}}">
+                  {{destination.name}}
+                </md-option>
+              </md-select>
+              <div ng-messages="projectForm.destination.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+        </div>
+
+        <div layout="row">
+          <md-input-container flex="50">
+            <label>Quantity</label>
+            <input type="number"  required name="quantity" ng-model="project.quantity">
+            <div ng-messages="projectForm.quantity.$error">
+              <div ng-message="required">This is required.</div>
+              <div ng-message="number">Invalid value.
+                </div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex="50">
+            <label>Project Type</label>
+            <md-select name="type" ng-model="project.type" required>
+              <md-option value="app">Application</md-option>
+              <md-option value="web">Website</md-option>
+            </md-select>
+            <div ng-messages="projectForm.type.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+        </div>
+
+
+      </div>
+
+    </md-dialog-content>
+    <md-dialog-actions>
+      <span flex></span>
+      <md-button ng-click="answer('not useful')">
+        CANCEL
+      </md-button>
+      <md-button class="md-raised md-primary btn-save-add" ng-click="answer('useful')"
+        ng-disabled="projectForm.$invalid">
+        SAVE
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

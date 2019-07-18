@@ -118,3 +118,24 @@
   background-color: #EE8D38 !important
 }
 
+/* TEMPLATE ADD*/
+
+.md-toolbar-tools h2 {
+  color: #ffF
+}
+
+.md-toolbar-tools md-icon {
+  color: #ffF !important
+}
+
+.dialog-add {
+  min-width: 580px !important;
+}
+
+.btn-save-add {
+  color: #ffF !important
+}
+
+.dialog-add md-input-container {
+  min-height: 54px;
+}

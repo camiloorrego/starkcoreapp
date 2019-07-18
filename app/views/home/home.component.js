@@ -5,7 +5,7 @@ angular.
   component('homePage', {
     templateUrl: '/views/home/home.template.html',
     controller:
-      ($scope, $window) => {
+      ($scope, $window, $mdDialog) => {
         console.log($window);
 
 
@@ -16,9 +16,66 @@ angular.
           filters = args;
         });
 
-        $scope.add = () => {
-          console.log(1);
+        $scope.add = (ev) => {
+          $mdDialog.show({
+            controller: DialogController,
+            templateUrl: '/views/home/add.template.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: false
+          })
+            .then(function (answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function () {
+              $scope.status = 'You cancelled the dialog.';
+            });
 
+        }
+
+        function DialogController($scope, $mdDialog, $http) {
+
+          $scope.origins = [];
+          $scope.destinations = [];
+          $scope.data = {};
+
+
+
+          $scope.hide = function () {
+            $mdDialog.hide();
+          };
+
+          $scope.cancel = function () {
+            $mdDialog.cancel();
+          };
+
+          $scope.answer = function (answer) {
+            $mdDialog.hide(answer);
+          };
+
+          function getOrigins() {
+            $http({ method: 'GET', url: '/assets/data/origins.json' }).
+              then(function (response) {
+                $scope.origins = response.data;
+              }, function (response) {
+                console.log(response);
+              });
+          }
+
+          function getDestinations() {
+            $http({ method: 'GET', url: '/assets/data/destinations.json' }).
+              then(function (response) {
+                $scope.destinations = response.data;
+              }, function (response) {
+                console.log(response);
+              });
+          }
+
+          function load() {
+            getOrigins();
+            getDestinations();
+          }
+
+          load();
         }
 
         function init() {
@@ -31,4 +88,9 @@ angular.
         init();
       }
 
+
+
   });
+
+
+
