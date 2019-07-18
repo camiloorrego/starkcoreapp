@@ -5,5 +5,6 @@ angular.module('starkCoreApp', [
   'ngAnimate',
   'ngRoute',
   'viewsModule',
-  'sharedModule'
+  'sharedModule',
+  'angularjs-datetime-picker'
 ]);

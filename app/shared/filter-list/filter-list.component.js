@@ -20,7 +20,7 @@ angular.
 
 
         $scope.statusChange = () => {
-          console.log(1);
+          //console.log(1);
 
         }
       }
