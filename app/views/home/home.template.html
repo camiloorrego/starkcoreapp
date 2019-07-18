@@ -5,7 +5,7 @@
 
   <div class="container-list">
 
-    <md-button class="md-fab md-primary btn-add" aria-label="add" ng-click="add($event)">
+    <md-button class="md-fab md-primary btn-add" aria-label="add" ng-click="add($event)" ng-if="login.user">
       <md-icon>add</md-icon>
     </md-button>
 
@@ -17,8 +17,11 @@
       </md-input-container>
     </div>
 
+    <div class="container-delivery" ng-if="!login.user">
+      <h1>You will need to Log in for create items</h1>
+    </div>
 
-    <div class="container-delivery" ng-repeat="item in items">
+    <div class="container-delivery" ng-repeat="item in items" ng-if="login.user">
       <div style="width: 10%" layout="row" layout-align="center center">
         <md-icon class="check-list" ng-class="{'delivery': item.status}">check_circle</md-icon>
       </div>

@@ -9,12 +9,15 @@ angular.
 
 
         $scope.deleteItem = (index) => {
-          console.log(index);
-          const temp = JSON.parse($window.sessionStorage.getItem('items'));
+          const temp = JSON.parse($window.sessionStorage.getItem($scope.login.user));
           temp.splice(index, 1);
-          $window.sessionStorage.setItem('items', JSON.stringify(temp))
+          $window.sessionStorage.setItem($scope.login.user, JSON.stringify(temp))
           load();
         }
+
+        $scope.$on("logout", function (e, args) {
+          console.log(22)
+        });
 
 
         $scope.TempItems = [];
@@ -22,7 +25,6 @@ angular.
         $scope.filter = '';
         let filters = {};
         $scope.$on("update-filters", function (e, args) {
-          console.log(args)
           filters = args;
           filter();
         });
@@ -44,11 +46,10 @@ angular.
 
 
         function load() {
-          $scope.TempItems = JSON.parse($window.sessionStorage.getItem('items')) || [];
+          $scope.TempItems = JSON.parse($window.sessionStorage.getItem($scope.login.user)) || [];
 
-          // Se añade status aleatorio y se hace formato de la fecha
+          // Se hace formato de la fecha
           $scope.TempItems.forEach((value, index, array) => {
-            value.status = (Math.floor(Math.random() * 2) + 1) === 1;
             value.datetime = toDateTime(value.date);
           });
 
@@ -109,7 +110,11 @@ angular.
           return dateString;
         }
 
+        function login() {
+          $scope.login = JSON.parse($window.sessionStorage.getItem('login'));
+        }
 
+        login();
         load();
 
         function DialogController($scope, $mdDialog, $http, $window) {
@@ -117,7 +122,7 @@ angular.
           $scope.origins = [];
           $scope.destinations = [];
           $scope.data = {};
-
+          $scope.login = JSON.parse($window.sessionStorage.getItem('login'));
 
           $scope.cancel = function () {
             $mdDialog.cancel();
@@ -125,9 +130,10 @@ angular.
 
           $scope.save = function () {
 
-            const items = JSON.parse($window.sessionStorage.getItem('items')) || [];
+            const items = JSON.parse($window.sessionStorage.getItem($scope.login.user)) || [];
+            $scope.data.status = (Math.floor(Math.random() * 2) + 1) === 1;
             items.push($scope.data)
-            $window.sessionStorage.setItem('items', JSON.stringify(items))
+            $window.sessionStorage.setItem($scope.login.user, JSON.stringify(items))
             $mdDialog.hide();
           };
 
