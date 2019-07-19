@@ -26,4 +26,6 @@ Run `npm start` for a dev server. Navigate to http://127.0.0.1:8000/index.html
 
 ![alt text](https://raw.githubusercontent.com/camiloorrego/images/master/account.PNG)
 
-[Video demo](https://youtu.be/EQryA2Xjn2k) 
+### Demo
+
+[Video](https://youtu.be/EQryA2Xjn2k) 
