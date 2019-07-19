@@ -165,6 +165,7 @@
 .messages {
   margin: 0 auto;
   width: 70%;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 /* TEMPLATE WISHLIST */
@@ -172,6 +173,7 @@
 .wishlist {
   margin: 0 auto;
   width: 70%;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .wishlist md-list-item .md-avatar,
@@ -185,4 +187,17 @@
 .settings {
   margin: 0 auto;
   width: 70%;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+
+/* GENERAL*/
+
+.container-login {
+  display: flex;
+  align-items: center;
+  width: 98%;
+  height: 100px;
+  margin-bottom: 15px;
+  font-size: 14px;
 }

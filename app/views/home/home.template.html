@@ -9,7 +9,7 @@
       <md-icon>add</md-icon>
     </md-button>
 
-    <div class="container-search">
+    <div class="container-search" ng-if="login.user">
       <md-input-container class="md-icon-float md-block field-search">
         <label>Search</label>
         <md-icon>search</md-icon>
@@ -17,8 +17,8 @@
       </md-input-container>
     </div>
 
-    <div class="container-delivery" ng-if="!login.user">
-      <h1>You will need to Log in for create items</h1>
+    <div class="container-login" ng-if="!login.user">
+      <h1>You will need to Log in for see your information</h1>
     </div>
 
     <div class="container-delivery" ng-repeat="item in items" ng-if="login.user">
