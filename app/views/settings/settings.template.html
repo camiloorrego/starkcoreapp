@@ -1,22 +1,10 @@
-<div class="account">
-    <div flex-xs flex-gt-xs="50" layout="column">
-      <md-card md-theme="default" md-theme-watch>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">{{name}}</span>
-            <span class="md-subhead">{{user}}</span>
-            <span class="md-subhead">{{email}}</span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-lg card-media">
-              <img ng-src="{{pic}}">
-            </div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-if="log" class="md-primary" ng-click="logout()">Log out</md-button>
-            <md-button ng-if="!log" class="md-primary" ng-click="login()">Log in</md-button>
-          </md-card-actions>
-      </md-card>
-    </div>
+<div class="settings">
+  <div class="md-toolbar-tools">
+    <span>{{'settings.LANGUAGE' | translate}}</span>
   </div>
+  <md-select ng-model="lan" flex="50" ng-change="changeLanguage()" aria-label="statuz">
+    <md-option value="en">{{'settings.ENGLISH' | translate}}</md-option>
+    <md-option value="es">{{'settings.SPANISH' | translate}}</md-option>
+
+  </md-select>
+</div>

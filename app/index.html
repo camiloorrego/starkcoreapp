@@ -17,6 +17,7 @@
 <script src="lib/angular-animate/angular-animate.js"></script>
 <script src="lib/angular-resource/angular-resource.js"></script>
 <script src="lib/angular-route/angular-route.js"></script>
+<script src="lib/angular-translate/dist/angular-translate.js"></script>
 
 <script src="app.module.js"></script>
 <script src="app.config.js"></script>
@@ -37,6 +38,9 @@
 <script src="shared/shared.module.js"></script>
 <script src="shared/filter-list/filter-list.component.js"></script>
 
+<script src="assets/translate/es.js"></script>
+<script src="assets/translate/en.js"></script>
+
 
 <body ng-controller="mainCtrl">
   <div class="container-main">
@@ -52,31 +56,31 @@
             <div>
               <md-icon>home</md-icon>
             </div>
-            <div class="lbl-tab">Home</div>
+            <div class="lbl-tab">{{ 'index.HOME' | translate }}</div>
           </a>
           <a class="tab" ng-href='#!/messages' ng-click="change(1)" ng-class="isActive(1)">
             <div>
               <md-icon>mail_outline</md-icon>
             </div>
-            <div class="lbl-tab">Messages</div>
+            <div class="lbl-tab">{{ 'index.MESSAGES' | translate }}</div>
           </a>
           <a class="tab" ng-href='#!/wishlist' ng-click="change(2)" ng-class="isActive(2)">
             <div>
               <md-icon>star</md-icon>
             </div>
-            <div class="lbl-tab">Wishlist</div>
+            <div class="lbl-tab">{{ 'index.WISHLIST' | translate }}</div>
           </a>
           <a class="tab" ng-href='#!/settings' ng-click="change(3)" ng-class="isActive(3)">
             <div>
               <md-icon>settings</md-icon>
             </div>
-            <div class="lbl-tab">Settings</div>
+            <div class="lbl-tab">{{ 'index.SETTINGS' | translate }}</div>
           </a>
           <a class="tab" ng-href='#!/account' ng-click="change(4)" ng-class="isActive(4)">
             <div>
               <md-icon>person</md-icon>
             </div>
-            <div class="lbl-tab">My account</div>
+            <div class="lbl-tab">{{ 'index.ACCOUNT' | translate }}</div>
           </a>
         </div>
       </div>

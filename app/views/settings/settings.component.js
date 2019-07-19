@@ -5,10 +5,13 @@ angular.
   component('settingsPage', {
     templateUrl: '/views/settings/settings.template.html',
     controller:
-      ($scope) => {
-        $scope.$on("SendDown", function () {
-          console.log(1)
-        });
+      ($scope, $translate) => {
+
+        $scope.lan = 'en'
+
+        $scope.changeLanguage = () => {
+          $translate.use($scope.lan);
+        };
       }
 
   });

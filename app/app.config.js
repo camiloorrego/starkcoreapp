@@ -2,8 +2,8 @@
 
 angular.
   module('starkCoreApp').
-  config(['$routeProvider', '$mdIconProvider', '$mdThemingProvider',
-    function config($routeProvider, $mdIconProvider, $mdThemingProvider) {
+  config(['$routeProvider', '$mdIconProvider', '$mdThemingProvider', '$translateProvider',
+    function config($routeProvider, $mdIconProvider, $mdThemingProvider, $translateProvider) {
 
       $routeProvider.
         when('/home', {
@@ -26,9 +26,9 @@ angular.
         });
 
       $mdIconProvider.icon('lightbulb', 'img/light-bulb.svg', 24)
-      .icon('sale', 'img/sale.svg', 24)
-      .icon('calendar', 'img/calendar.svg', 24)
-      .icon('heart', 'img/heart.svg', 24);
+        .icon('sale', 'img/sale.svg', 24)
+        .icon('calendar', 'img/calendar.svg', 24)
+        .icon('heart', 'img/heart.svg', 24);
 
       var customPrimary = {
         '50': '#3a84a7',
@@ -45,12 +45,10 @@ angular.
         'A200': '#519ec3',
         'A400': '#64a9c9',
         'A700': '#000000'
-    };
-    $mdThemingProvider
-        .definePalette('customPrimary', 
-                        customPrimary);
+      };
+      $mdThemingProvider.definePalette('customPrimary', customPrimary);
 
-    var customAccent = {
+      var customAccent = {
         '50': '#171e43',
         '100': '#1e2756',
         '200': '#252f69',
@@ -65,14 +63,16 @@ angular.
         'A200': '#3f51b5',
         'A400': '#3849a2',
         'A700': '#98a2db'
-    };
-    $mdThemingProvider
-        .definePalette('customAccent', 
-                        customAccent);
+      };
+      $mdThemingProvider.definePalette('customAccent', customAccent);
 
-      $mdThemingProvider.theme('default')
-        .primaryPalette('customPrimary')
-        .accentPalette('customAccent')
+      $mdThemingProvider.theme('default').primaryPalette('customPrimary').accentPalette('customAccent')
 
+
+      $translateProvider.translations('en', en);
+      $translateProvider.translations('es', es);
+      $translateProvider.preferredLanguage('en');
+
+      $translateProvider.useSanitizeValueStrategy('escape');
     }
   ]);
