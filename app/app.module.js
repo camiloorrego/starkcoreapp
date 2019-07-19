@@ -7,5 +7,6 @@ angular.module('starkCoreApp', [
   'viewsModule',
   'sharedModule',
   'angularjs-datetime-picker',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'md.data.table'
 ]);

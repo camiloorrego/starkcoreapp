@@ -1,3 +1,31 @@
 <div class="messages">
- 
+
+  <div class="md-toolbar-tools" ng-if="login.user">
+    <span>Messages</span>
+  </div>
+  <div class="container-login" ng-if="!login.user">
+    <h1>You will need to Log in for see your information</h1>
+  </div>
+  <md-card md-theme="default" md-theme-watch ng-if="login.user">
+    <md-table-container>
+      <table md-table multiple ng-model="selected" md-progress="promise">
+        <thead md-head md-order="query.order">
+          <tr md-row>
+            <th md-column>To</th>
+            <th md-column>From</th>
+            <th md-column>Subject</th>
+            <th md-column>Message</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-select="message" md-select-id="name" md-auto-select ng-repeat="message in messages">
+            <td md-cell>{{message.to}}</td>
+            <td md-cell>{{message.from}}</td>
+            <td md-cell>{{message.subject}}</td>
+            <td md-cell>{{message.message}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+  </md-card>
 </div>

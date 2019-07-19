@@ -15,14 +15,9 @@ angular.
           load();
         }
 
-        $scope.$on("logout", function (e, args) {
-          console.log(22)
-        });
-
-
         $scope.TempItems = [];
         $scope.items = [];
-        $scope.filter = '';
+        $scope.search = '';
         let filters = {};
         $scope.$on("update-filters", function (e, args) {
           filters = args;
@@ -91,9 +86,9 @@ angular.
             });
           }
 
-          if ($scope.filter) {
+          if ($scope.search) {
             i = i.filter((i) => {
-              return i.origin.includes($scope.filter) || i.destination.includes($scope.filter);
+              return i.origin.includes($scope.search) || i.destination.includes($scope.search);
             });
           }
 
